@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport"
+         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Qolda</title>
+</head>
+<body>
+   <div class="profile">
+      <div class="profile-head">
+         <div class="nickname uk-animation-slide-top">
+            <div class="overlay">
+               <div class="flex">
+                  <div>
+                     <h1>
+                        <slot name="name"></slot>
+                     </h1>
+                     <p class="job">
+                        <slot name="profession"></slot>
+                     </p>
+                  </div>
+                  <div class="star">
+                     <button>
+                        <i class="fa fa-star" aria-hidden="true"></i>Star
+                     </button>
+                     <span class="quantity-star">0</span>
+                  </div>
+               </div>
+               <div class="edit-profile">
+                  <a href="#modal-full" uk-toggle>Редактировать профиль</a>
+                  <div id="modal-full" class="uk-modal-full" uk-modal>
+                     <div class="uk-modal-dialog">
+                        <button class="uk-modal-close-full delete-svg uk-close-large" type="button" uk-close></button>
+                        <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+                           <div class="uk-background-cover" style="background-image: url('../img/photo.jpg');"
+                                uk-height-viewport></div>
+                           <div class="uk-padding-large">
+                              <h1>Headline</h1>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                 dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                                 anim id est laborum.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <nav uk-sticky>
+            <div class="responsive-nav">
+               <div class="responsive-burger__menu">
+                  <div class="burger">
+                     <span></span>
+                  </div>
+                  <div class="responsive-dropdown"
+                       uk-dropdown="mode: click; pos: bottom-justify; animation: uk-animation-fade">
+                     <ul class="responsive-menu">
+                        <li>
+                           <a href="#">Главная</a>
+                        </li>
+                        <li>
+                           <a href="#">Профориентационный тест</a>
+                        </li>
+                        <li>
+                           <a href="#">Настройки</a>
+                        </li>
+                        <li>
+                           <a href="#">Выход</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="normal-nav">
+               <ul class="menu-1">
+                  <li>
+                     <a href="#">Главная
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" title="Профориентационный тест">Проф. тест
+                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                     </a>
+                  </li>
+               </ul>
+               <div class="ava">
+                  <div class="ava-photo">
+                     <slot name="img"></slot>
+                  </div>
+               </div>
+               <ul class="menu-2">
+                  <li>
+                     <a href="">Настройк
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="signin.html">Выхо
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+      </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport"
+         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="icon" href="img/icon.ico">
+   <link rel="stylesheet" href="css/font-awesome.min.css">
+   <link rel="stylesheet" href="css/style.css">
+   <script src="js/uikit.min.js"></script>
+   <title>Qolda</title>
+</head>
+<body>
+   <div id="app">
+      <div class="profile">
+         <div class="profile-head">
+            <nav uk-sticky>
+               <div class="responsive-nav">
+                  <div class="responsive-burger__menu">
+                     <div class="burger">
+                        <span></span>
+                     </div>
+                     <div class="responsive-dropdown" uk-dropdown="mode: click; pos: bottom-justify; animation: uk-animation-fade">
+                        <ul class="responsive-menu">
+                           <li>
+                              <a href="#">Главная</a>
+                           </li>
+                           <li>
+                              <a href="#">Профориентационный тест</a>
+                           </li>
+                           <li>
+                              <a href="#">Вход/Регистрация</a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="normal-nav reg">
+                  <ul class="menu-1">
+                     <li>
+                        <a href="#">Главная
+                           <i class="fa fa-home" aria-hidden="true"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#" title="Профориентационный тест">Профориентационный тест
+                           <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="signin.html">Вход/Регистрация
+                           <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </div>
+      <div class="question">
+         <h1>Frontend или Backend?</h1>
+      </div>
+      <div class="answer-box">
+         <label class="test-answer-a" for="answer-a">
+            <input id="answer-a" type="radio" name="answer" value="">
+            <div class="overlay-answer__bg"></div>
+            <p class="overlay-answer__text">Frontend</p>
+         </label>
+
+         <label class="test-answer-b" for="answer-b">
+            <input id="answer-b" type="radio" name="answer" value="">
+            <div class="overlay-answer__bg"></div>
+            <p class="overlay-answer__text">Backend</p>
+         </label>
+      </div>
+      <div class="question-data">
+         <button class="next-question">Далее</button>
+      </div>
+   </div>
+
+   <script src="js/vue.js"></script>
+   <script src="js/main.js"></script>
+</body>
+</html>

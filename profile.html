@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="icon" href="img/icon.ico">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/uikit.min.js"></script>
+	<title>Qolda</title>
+</head>
+<body>
+	<div id="app">
+      <profile>
+         <template slot="name">
+            Nurel Myrzagasimov
+         </template>
+         <template slot="img">
+            <img src="img/ava.png" alt="ava">
+         </template>
+         <template slot="profession">
+            Frontend developer
+         </template>
+      </profile>
+
+		<div class="profile-info">
+			<div class="profile-box">
+				<div class="profile-info__personal">
+					<h2 class="profile-info__title">Личная информация</h2>
+					<table class="personal-info">
+						<tr>
+							<th>Дата рождения:</th>
+							<td>12/02/2000</td>
+						</tr>
+						<tr>
+							<th>Телефон:</th>
+							<td>+7 775 798 9824</td>
+						</tr>
+						<tr>
+							<th>Почта:</th>
+							<td>nurel32@gmail.com</td>
+						</tr>
+						<tr>
+							<th>Скайп:</th>
+							<td>nurel00</td>
+						</tr>
+						<tr>
+							<th>Страна:</th>
+							<td>Казахстан</td>
+						</tr>
+					</table>
+				</div>
+
+				<div class="profile-info__expertise">
+					<h2 class="profile-info__title">Проф. способности</h2>
+					<ul class="expertise-info">
+						<li v-for="skill in skills">{{ skill }}</li>
+					</ul>
+				</div>
+
+				<div class="profile-info__about">
+					<h2 class="profile-info__title">Обо мне</h2>
+					<p class="profile-info__job">Frontend Developer</p>
+					<p class="profile-info__text">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda doloribus minima quisquam similique! Aperiam autem doloribus
+						incidunt, ipsam ipsum libero minus natus quibusdam repudiandae veritatis. Incidunt ullam unde velit vero?
+					</p>
+				</div>
+			</div>
+
+			<div class="profile-recommendation">
+				<div class="recommendation-wrapper">
+					<h2 class="profile-info__title">Рекомендаций</h2>
+					<div class="recommendation-tab">
+						<div class="select-button">
+							<button class="tab-button" v-for="(tab, index) in tabs" :class="{active : currentTab === index }" @click="currentTab = index">
+								{{ tab }}
+							</button>
+						</div>
+
+						<div class="recommendation-tab__wrap">
+							<div class="tab-item" v-show="currentTab === 0">
+								<div class="title-box">
+									<h2 class="profile-info__title">Мои рекомендаций</h2>
+									<a href="add-advice.html" class="add-advice">Добавить рекомендацию</a>
+								</div>
+								<div class="list-box">
+									<div class="recommendation-list" v-for="advice of myAdvice">
+										<a href="#">
+											<h3 class="list-title">{{ advice.title }}</h3>
+											<p class="list-date__create">{{ advice.date }} - Дата создание</p>
+											<p class="list-desc">
+												{{ advice.desc }}
+											</p>
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="tab-item" v-show="currentTab === 1">
+								<h2 class="profile-info__title">Сохраненные рекомендации</h2>
+
+								<div class="list-box">
+									<div class="recommendation-list" v-for="other of otherAdvice">
+										<a href="#">
+											<h3 class="list-title">{{ other.title }}</h3>
+											<p class="list-date__create">{{ other.date }} - Дата создание</p>
+											<p class="list-desc">
+												{{ other.desc }}
+											</p>
+											<p class="list-author">{{ other.author }} - Автор</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/vue.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
